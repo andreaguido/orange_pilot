@@ -1,0 +1,129 @@
+{{ block title }}
+{{ if player.dropped == 0 }}2eme Phase{{ else }} Clotûre des réservations {{ endif }}
+{{ endblock }}
+{{ block content }}
+
+{{ if player.dropped == 0 }}
+
+<style>
+    .tab {
+        display: none;
+        padding: 10px;
+    }
+</style>
+<h3>Consommation détaillée:</h3>
+Nous vous demandons de déclarer le détail de consommation de données (Wi-Fi et reseau Mobile) pour les applications suivantes :
+Facebook, Instagram, TikTok, Snapchat et YouTube. Si une ou plusieurs de ces applications ne sont pas téléchargées sur votre téléphone,
+veuillez laisser les cases correspondantes vides.
+<br>
+Nous vous rappelons qu'il faut garder la semaine du 11 septembre - 17 septembre.
+
+    <img src="{{ static 'etape_app.png' }}", style="width: 100%; height: auto;"/>
+
+<br><br>
+<b>Reportez votre consommation par application (indiquez également l'unité de mesure)</b> :
+
+<br>
+<br>
+<div class="container-fluid">
+    <div class="panel panel-primary">
+            <table class="table">
+                <tr><td colspan="3" style="text-align: center"><b>Facebook</b></td></tr>
+                <tr>
+                    <td>Données Mobile</td>
+                    <td>{{ formfield 'mobile_facebook' }}</td>
+                    <td>{{ formfield 'mobile_UM_facebook' }}</td>
+                </tr>
+                <tr>
+                    <td>Données Wi-Fi</td>
+                    <td>{{ formfield 'wifi_facebook' }}</td>
+                    <td>{{ formfield 'wifi_UM_facebook' }}</td>
+                </tr>
+                <tr><td colspan="3" style="text-align: center"><b>Instagram</b></td></tr>
+                <tr>
+                    <td>Données Mobile</td>
+                    <td>{{ formfield 'mobile_instagram' }}</td>
+                    <td>{{ formfield 'mobile_UM_instagram' }}</td>
+                </tr>
+                <tr>
+                    <td>Données Wi-Fi</td>
+                    <td>{{ formfield 'wifi_instagram' }}</td>
+                    <td>{{ formfield 'wifi_UM_instagram' }}</td>
+                </tr>
+                <tr><td colspan="3" style="text-align: center"><b>TikTok</b></td></tr>
+                <tr>
+                    <td>Données Mobile</td>
+                    <td>{{ formfield 'mobile_tiktok' }}</td>
+                    <td>{{ formfield 'mobile_UM_tiktok' }}</td>
+                </tr>
+                <tr>
+                    <td>Données Wi-Fi</td>
+                    <td>{{ formfield 'wifi_tiktok' }}</td>
+                    <td>{{ formfield 'wifi_UM_tiktok' }}</td>
+                </tr>
+                <tr><td colspan="3" style="text-align: center"><b>Snapchat</b></td></tr>
+                <tr>
+                    <td>Données Mobile</td>
+                    <td>{{ formfield 'mobile_snapchat' }}</td>
+                    <td>{{ formfield 'mobile_UM_snapchat' }}</td>
+                </tr>
+                <tr>
+                    <td>Données Wi-Fi</td>
+                    <td>{{ formfield 'wifi_snapchat' }}</td>
+                    <td>{{ formfield 'wifi_UM_snapchat' }}</td>
+                </tr>
+                <tr><td colspan="3" style="text-align: center"><b>YouTube</b></td></tr>
+                <tr>
+                    <td>Données Mobile</td>
+                    <td>{{ formfield 'mobile_youtube' }}</td>
+                    <td>{{ formfield 'mobile_UM_youtube' }}</td>
+                </tr>
+                <tr>
+                    <td>Données Wi-Fi</td>
+                    <td>{{ formfield 'wifi_youtube' }}</td>
+                    <td>{{ formfield 'wifi_UM_youtube' }}</td>
+                </tr>
+            </table>
+            </div>
+    </div>
+</div>
+
+<br><br>
+Appuyer sur « Suivant » de que vous avez terminé. <br><br>
+
+{{ next_button }}
+
+
+<script>
+
+    let activeTab = 0;
+    let tabs = document.getElementsByClassName('tab');
+
+    function showCurrentTabOnly() {
+      for (let i = 0; i < tabs.length; i++) {
+        let tab = tabs[i];
+        if (i === activeTab) {
+          tab.style.display = 'block';
+          tab.scrollIntoView();
+        } else {
+          tab.style.display = 'none';
+        }
+      }
+    }
+
+    showCurrentTabOnly();
+    for (let btn of document.getElementsByClassName('btn-tab')) {
+        btn.onclick = function () {
+            activeTab += parseInt(btn.dataset.offset);
+            showCurrentTabOnly();
+        }
+    }
+</script>
+
+{{ else }}
+
+{{ include Constants.DROPPED }}
+
+{{ endif }}
+
+{{ endblock }}

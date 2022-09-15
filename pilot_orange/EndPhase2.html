@@ -1,0 +1,24 @@
+{{ block title }}
+    {{ if player.dropped == 0 }}Fin de l'expérience{{ else }} Clotûre des réservations {{ endif }}
+{{ endblock }}
+
+{{ block content }}
+
+{{ if player.dropped == 0 }}
+
+Merci pour votre participation aux deux phases de cette étude, qui est à présent terminée. <br>
+Vous recevrez le {{ Constants.payment_day }} par mail un lien vous permettant de savoir si vous avez été tiré.e au sort ou non pour être rémunéré.e.
+<br>
+Si vous faites partie des personnes sélectionnées la page web vous communiquera la procédure pour récupérer votre gain.
+<br><br>
+Pour toutes questions, contactez <i>experiences.lessac@gmail.com</i>. <br>
+Pour rappel, votre identifiant dans cette étude est {{ participant.label }}. <br>
+Encore merci pour votre participation, vous pouvez à présent fermer cette fenêtre.
+
+{{ else }}
+
+{{ include Constants.DROPPED }}
+
+{{ endif }}
+
+{{ endblock }}

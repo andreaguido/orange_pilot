@@ -1,0 +1,111 @@
+<div class="tab">
+
+Bienvenue à la 2ème phase de cette expérience! <br><br>
+Pour cette phase, nous vous demandons de consulter l’application « GlassWire » et de reporter vos consommations de données. Lisez attentivement les instructions suivantes.
+<br><br>
+
+<div style="padding: 10px">
+    <b>Vos gains :</b> Votre réponse à ces questions n'aura aucun effet sur vos gains potentiels tant que votre réponse est <b>sincère</b> !
+    A la fin de l'étude, si vous êtes tiré.e au sort pour être rémunéré.e, notre équipe vérifiera la <b>concordance</b> de votre
+    <b>déclaration</b> avec les chiffres reportées de l’<b>application</b>.
+    <br><br>
+
+    Il vous sera demandé de montrer des captures d’écran pour valider les chiffres déclarés.
+    <ul>
+
+        <li>Si les chiffres que vous déclarez et vos captures d’écran <b>concordent</b>, vous recevrez {{ Constants.prize }}.</li>
+        <li>Dans le cas où ils <b>ne concordent pas</b>, vous ne recevrez pas vos gains</li>
+
+    </ul>
+    <div style="text-align: center">
+          <p style="padding: 20px">
+            <button type="button" class="btn-tab btn btn-primary" data-offset="1">Suivant</button>
+        </p>
+    </div>
+    </div>
+</div>
+
+<div class="tab">
+<b>Tout d’abord, nous vous demandons de reporter vos données par Wi-Fi exclusivement. <br><br>
+Comment reporter vos consommations de données par Wi-Fi ?</b>
+
+    <img src="{{ static 'etape2_1.png' }}", style="width: 100%; height: auto;"/>
+
+  <p style="padding: 20px; text-align: center">
+        <button type="button" class="btn-tab btn btn-primary" data-offset="-1">Précédent</button>
+        <button type="button" class="btn-tab btn btn-primary" data-offset="1">Suivant</button>
+  </p>
+</div>
+
+<div class="tab">
+
+    <img src="{{ static 'etape2_2.png' }}", style="width: 100%; height: auto;"/>
+
+  <p style="padding: 20px;text-align: center">
+        <button type="button" class="btn-tab btn btn-primary" data-offset="-1">Précédent</button>
+        <button type="button" class="btn-tab btn btn-primary" data-offset="1">Suivant</button>
+    </p>
+</div>
+
+<div class="tab">
+
+    <img src="{{ static 'etape2_3.png' }}", style="width: 100%; height: auto;"/>
+
+  <p style="padding: 20px;text-align: center"">
+        <button type="button" class="btn-tab btn btn-primary" data-offset="-1">Précédent</button>
+        <button type="button" class="btn-tab btn btn-primary" data-offset="1">Suivant</button>
+    </p>
+</div>
+
+<div class="tab">
+
+    <img src="{{ static 'etape2_4.png' }}", style="width: 100%; height: auto;"/>
+
+  <p style="padding: 20px;text-align: center"">
+        <button type="button" class="btn-tab btn btn-primary" data-offset="-1">Précédent</button>
+        <button type="button" class="btn-tab btn btn-primary" data-offset="1">Suivant</button>
+    </p>
+</div>
+
+<div class="tab">
+        <img src="{{ static 'etape2_5.png' }}", style="width: 100%; height: auto;"/>
+
+    <p style="padding: 20px;text-align: center"">
+        <button type="button" class="btn-tab btn btn-primary" data-offset="-1">Précédent</button>
+        <button type="button" class="btn-tab btn btn-primary" data-offset="1">Suivant</button>
+
+    </p>
+</div>
+
+<div class="tab">
+
+<div style="text-align: center"><h3>Reportez votre consommation Wi-Fi</h3><br></div>
+    Sélectionnez la semaine du <b>11 Septembre – 17 septembre</b> sur l’application et reportez ci-dessous les consommations des données Wi-Fi.
+
+<div style="text-align: center"><b>Image récapitulative</b> <br>Assurez-vous d'utiliser les mêmes paramètres (Wi-Fi, Week, 11 Sep - 17 Sep)</div>
+    <br><br>
+
+            <img src="{{ static 'etape2_5bis.png' }}", style="width: 100%; height: auto;"/>
+
+<br>
+<br>
+<table>
+    <tr>
+        <td>{{ formfield 'wifi_consumption' }}</td>
+    </tr>
+    <tr>
+        <td>{{ formfield 'wifi_UM' }}</td>
+    </tr>
+</table>
+
+<br>
+
+    Appuyer sur « Suivant » de que vous avez terminé. <br><br>
+
+    <p style="text-align: center; padding: 20px">
+        <button type="button" class="btn-tab btn btn-primary" data-offset="-1">Précédent</button>
+        <button class="btn btn-primary">Suivant</button>
+    </p>
+
+
+</div>

@@ -1,0 +1,35 @@
+{{ block title }}
+    Réservez votre place à l'expérience en ligne
+{{ endblock }}
+
+{{ block content }}
+<h5>Description de l'expérience : </h5>
+L'expérience se fera en deux phases :
+
+
+<ul>
+
+    <li>1ère Phase : {{ Constants.Phase1_date }}</li>
+    <li>2ème Phase: {{ Constants.Phase2_date}}</li>
+</ul>
+
+Dans la 1ère Phase, vous devrez répondre en ligne à un questionnaire, puis télécharger et conserver pendant une semaine une application pour smartphone Android.
+<br>
+Lors de la 2ème phase, vous devrez de nouveau répondre à un questionnaire en ligne.
+<br>
+Chacune des deux phases de l'étude vous prendra moins de 5 minutes.
+<br><br>
+A la fin de la 2ème phase de l'étude, une partie des participants qui ont répondu aux deux questionnaires seront aléatoirement sélectionnés. Ils recevront la somme de {{ Constants.prize }} chacun.
+<br><br>
+Si vous êtes sûr.e de vouloir participer, appuyez sur « Je réserve ma place ! » pour réserver votre place à l'expérience.
+<br><br>
+<div style="text-align: center">
+
+<button class="btn btn-primary">Je réserve ma place !</button>
+
+    <br><br>
+    Si vous ne voulez pas participer à l'expérience, veuillez fermer cet onglet.
+</div>
+{{ endblock }}
+
+

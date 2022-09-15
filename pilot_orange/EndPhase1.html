@@ -1,0 +1,33 @@
+{{ block title }}
+ {{ if player.dropped == 0 }}1ere Phase terminée{{ else }} Clotûre des réservations {{ endif }}
+{{ endblock }}
+{{ block content }}
+
+{{ if player.dropped == 0 }}
+
+Nous vous rappelons qu’il faut garder l’application installée sur votre téléphone jusqu’à la fin de cette expérience pour pouvoir participer à la 2ème phase de l’expérience.
+<br><br>
+<b>RDV le {{ Constants.Phase2_date }}</b> <br>
+Ajoutez l'événement à votre calendrier : <a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=M241aHUzYTVrMWRmbGVicWpvYWZwbDdrajQgZXhwZXJpZW5jZXMubGVzc2FjQG0&amp;tmsrc=experiences.lessac%40gmail.com"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_it.gif"></a>
+<a href="{{ static '2emePhase_Montpel.ics' }}">iCalendar</a>
+
+<br><br>
+La participation à cette dernière phase de l’expérience est nécessaire pour être rémunéré.
+
+<br><br>
+Le {{ Constants.Phase2_data }}, vous devrez vous connecter en utilisant le même lien présent dans le mail d’invitation. Un mail de rappel vous vous sera envoyé.
+
+<br><br>
+
+Pour rappel, votre identifiant dans cette étude est {{ participant.label }}.
+
+<br><br>
+
+Vous pouvez fermer cet onglet.
+{{ else }}
+
+{{ include Constants.DROPPED }}
+
+{{ endif }}
+
+{{ endblock }}

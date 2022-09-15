@@ -1,0 +1,18 @@
+{{ block title }}
+    {{ if player.dropped == 0 }}Nous vous demandons de répondre à un bref questionnaire.{{ else }} Clotûre des réservations {{ endif }}
+
+{{ endblock }}
+
+{{ block content }}
+{{ if player.dropped == 0 }}
+
+    {{ formfields }}
+    {{ next_button }}
+
+{{ else }}
+
+{{ include Constants.DROPPED }}
+
+{{ endif }}
+
+{{ endblock }}

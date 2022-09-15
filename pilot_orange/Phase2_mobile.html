@@ -1,0 +1,68 @@
+{{ block title }}
+{{ if player.dropped == 0 }}2eme Phase{{ else }} Clotûre des réservations {{ endif }}
+{{ endblock }}
+{{ block content }}
+{{ if player.dropped == 0 }}
+
+<style>
+    .tab {
+        display: none;
+        padding: 10px;
+    }
+</style>
+
+<h3>Reportez votre consommation Mobile</h3>
+Nous vous demandons maintenant de reporter vos données <u>Mobile exclusivement</u>.
+La procédure à suivre est la même. Cette fois, <b>vous devrez sélectionner « Mobile »</b>. Nous vous rappelons qu'il faut garder la semaine du 11 septembre - 17 septembre.
+
+    <img src="{{ static 'etape2_6.png' }}", style="width: 100%; height: auto;"/>
+
+<br>
+<br>
+<table>
+    <tr>
+        <td>{{ formfield 'mobile_consumption' }}</td>
+    </tr>
+    <tr>
+        <td>{{ formfield 'mobile_UM' }}</td>
+    </tr>
+</table>
+
+<br><br>
+Appuyer sur « Suivant » de que vous avez terminé. <br><br>
+
+{{ next_button }}
+
+
+<script>
+
+    let activeTab = 0;
+    let tabs = document.getElementsByClassName('tab');
+
+    function showCurrentTabOnly() {
+      for (let i = 0; i < tabs.length; i++) {
+        let tab = tabs[i];
+        if (i === activeTab) {
+          tab.style.display = 'block';
+          tab.scrollIntoView();
+        } else {
+          tab.style.display = 'none';
+        }
+      }
+    }
+
+    showCurrentTabOnly();
+    for (let btn of document.getElementsByClassName('btn-tab')) {
+        btn.onclick = function () {
+            activeTab += parseInt(btn.dataset.offset);
+            showCurrentTabOnly();
+        }
+    }
+</script>
+{{ else }}
+
+{{ include Constants.DROPPED }}
+
+{{ endif }}
+
+{{ endblock }}

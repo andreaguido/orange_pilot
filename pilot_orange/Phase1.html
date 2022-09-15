@@ -1,0 +1,62 @@
+{{ block title }}
+{{ if player.dropped == 0 }}1ere Phase{{ else }} Clotûre des réservations {{ endif }}
+{{ endblock }}
+
+{{ block content }}
+
+{{ if player.dropped == 0 }}
+
+<style>
+    .tab {
+        display: none;
+        padding: 10px;
+    }
+</style>
+
+Pour cette phase de l'expérience, nous vous demandons de télécharger « GlassWire », une application disponible dans le Google Play Store pour tous les smartphones Android.
+Cette application vous permettra de surveiller votre consommation de données par type de connexion (Wi-Fi ou réseau Mobile).
+
+<br><br>
+Pour être éligible au tirage au sort de cette expérience, vous devez installer puis conserver cette application pour toute la durée de l’expérience (19 septembre inclus).
+<br><br>
+<b>Ci-dessous, vous trouverez un guide à l’installation :</b>
+
+<br><br>
+
+{{ include Constants.TABS_TEMPLATE }}
+
+
+<script>
+
+    let activeTab = 0;
+    let tabs = document.getElementsByClassName('tab');
+
+    function showCurrentTabOnly() {
+      for (let i = 0; i < tabs.length; i++) {
+        let tab = tabs[i];
+        if (i === activeTab) {
+          tab.style.display = 'block';
+          tab.scrollIntoView();
+        } else {
+          tab.style.display = 'none';
+        }
+      }
+    }
+
+    showCurrentTabOnly();
+    for (let btn of document.getElementsByClassName('btn-tab')) {
+        btn.onclick = function () {
+            activeTab += parseInt(btn.dataset.offset);
+            showCurrentTabOnly();
+        }
+    }
+</script>
+
+
+{{ else }}
+
+{{ include Constants.DROPPED }}
+
+{{ endif }}
+
+{{ endblock }}

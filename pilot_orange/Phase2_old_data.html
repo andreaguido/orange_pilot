@@ -1,0 +1,80 @@
+{{ block title }}
+{{ if player.dropped == 0 }}2eme Phase{{ else }} Clotûre des réservations {{ endif }}
+{{ endblock }}
+{{ block content }}
+{{ if player.dropped == 0 }}
+<style>
+    .tab {
+        display: none;
+        padding: 10px;
+    }
+</style>
+
+
+<h3>Reportez votre consommation de la semaine du 4 sept. - 10 sept.</h3>
+
+Avant de terminer la 2ème phase, nous vous demandons de sélectionner la semaine du «4 sept. - 10 sept» et indiquez votre consommation générale de données par <b>Mobile</b> et par <b>Wi-Fi</b> séparément.
+La procedure pour sélectionner le type de connexion (Wi-Fi ou réseau Mobile) est la même que les étapes précédentes.
+
+<br><br>
+
+Image récapitulative :
+
+<img src="{{ static 'etape_data_old.png'}}" style="width: 100%; height: auto;">
+<br><br>
+
+<div style="text-align: center"><b>Consommation par Wi-Fi (semaine 4-10 sept)</b></div>
+
+<table>
+    <tr>
+        <td>{{ formfield 'wifi_consumption_old' }}</td>
+    </tr>
+    <tr>
+        <td>{{ formfield 'wifi_UM_old' }}</td>
+    </tr>
+</table>
+
+<div style="text-align: center"><b>Consommation par Mobile (semaine 4-10 sept)</b></div>
+<table>
+    <tr>
+        <td>{{ formfield 'mobile_consumption_old' }}</td>
+    </tr>
+    <tr>
+        <td>{{ formfield 'mobile_UM_old' }}</td>
+    </tr>
+</table>
+
+{{ next_button }}
+
+<script>
+
+    let activeTab = 0;
+    let tabs = document.getElementsByClassName('tab');
+
+    function showCurrentTabOnly() {
+      for (let i = 0; i < tabs.length; i++) {
+        let tab = tabs[i];
+        if (i === activeTab) {
+          tab.style.display = 'block';
+          tab.scrollIntoView();
+        } else {
+          tab.style.display = 'none';
+        }
+      }
+    }
+
+    showCurrentTabOnly();
+    for (let btn of document.getElementsByClassName('btn-tab')) {
+        btn.onclick = function () {
+            activeTab += parseInt(btn.dataset.offset);
+            showCurrentTabOnly();
+        }
+    }
+</script>
+{{ else }}
+
+{{ include Constants.DROPPED }}
+
+{{ endif }}
+
+{{ endblock }}
