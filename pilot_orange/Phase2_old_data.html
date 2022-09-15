@@ -11,9 +11,9 @@
 </style>
 
 
-<h3>Reportez votre consommation de la semaine du 4 sept. - 10 sept.</h3>
+<h3>Reportez votre consommation de la semaine du {{ Constants.app_debut_old }} - {{ Constants.app_end }}</h3>
 
-Avant de terminer la 2ème phase, nous vous demandons de sélectionner la semaine du «4 sept. - 10 sept» et indiquez votre consommation générale de données par <b>Mobile</b> et par <b>Wi-Fi</b> séparément.
+Avant de terminer la 2ème phase, nous vous demandons de sélectionner la semaine du «{{ Constants.app_debut_old }} - {{ Constants.app_end }}» et indiquez votre consommation générale de données par <b>Mobile</b> et par <b>Wi-Fi</b> séparément.
 La procedure pour sélectionner le type de connexion (Wi-Fi ou réseau Mobile) est la même que les étapes précédentes.
 
 <br><br>
@@ -23,7 +23,7 @@ Image récapitulative :
 <img src="{{ static 'etape_data_old.png'}}" style="width: 100%; height: auto;">
 <br><br>
 
-<div style="text-align: center"><b>Consommation par Wi-Fi (semaine 4-10 sept)</b></div>
+<div style="text-align: center"><b>Consommation par Wi-Fi (semaine {{ Constants.app_debut_old }} - {{ Constants.app_end }})</b></div>
 
 <table>
     <tr>
@@ -34,7 +34,7 @@ Image récapitulative :
     </tr>
 </table>
 
-<div style="text-align: center"><b>Consommation par Mobile (semaine 4-10 sept)</b></div>
+<div style="text-align: center"><b>Consommation par Mobile (semaine {{ Constants.app_debut_old }} - {{ Constants.app_end }})</b></div>
 <table>
     <tr>
         <td>{{ formfield 'mobile_consumption_old' }}</td>

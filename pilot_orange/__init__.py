@@ -10,10 +10,12 @@ class Constants(BaseConstants):
     name_in_url = 'pilot'
     players_per_group = None
     num_rounds = 1
-    #start_date= "11 septembre"  # date to be set on glasswire NOT USED
-    #end_date= "19 septembre"  # not implemented
+    app_debut_old = "11 septembre"
+    app_end_old= "17 septembre"
+    app_debut = "18 septembre"
+    app_end= "24 septembre"
     Phase1_date = "19 septembre"
-    Phase2_date = "26 septembre"
+    Phase2_date = "25 septembre"
     prize = cu(25)
     probability = "25%"
     TABS_TEMPLATE = __name__ + '/tabs.html'
