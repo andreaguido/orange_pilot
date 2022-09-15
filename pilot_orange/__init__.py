@@ -10,8 +10,8 @@ class Constants(BaseConstants):
     name_in_url = 'pilot'
     players_per_group = None
     num_rounds = 1
-    app_debut_old = "11 septembre"
-    app_end_old= "17 septembre"
+    app_debut_old = "11 septembre" # should be a sunday
+    app_end_old= "17 septembre" # should be a saturday
     app_debut = "18 septembre"
     app_end= "24 septembre"
     Phase1_date = "19 septembre"
