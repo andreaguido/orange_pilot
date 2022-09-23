@@ -1,0 +1,14 @@
+{{ block title }}
+    Resultats
+{{ endblock }}
+{{ block content }}
+
+{{ if player.paid == 1 }}
+    YOU WON! {{ participant.label }}
+{{ else }}
+    SORRY ! suca {{ participant.label }}
+{{ endif }}
+
+    {{ next_button }}
+
+{{ endblock }}
